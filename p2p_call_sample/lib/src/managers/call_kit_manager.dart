@@ -1,7 +1,6 @@
+import 'package:connectycube_flutter_call_kit/connectycube_flutter_call_kit.dart';
 import 'package:connectycube_sdk/connectycube_sdk.dart';
 import 'package:universal_io/io.dart';
-
-import 'package:connectycube_flutter_call_kit/connectycube_flutter_call_kit.dart';
 
 class CallKitManager {
   static CallKitManager get instance => _getInstance();
@@ -44,7 +43,7 @@ class CallKitManager {
   }
 
   Future<void> processCallFinished(String uuid) async {
-    if(Platform.isAndroid || Platform.isIOS) {
+    if (Platform.isAndroid || Platform.isIOS) {
       ConnectycubeFlutterCallKit.reportCallEnded(sessionId: uuid);
       ConnectycubeFlutterCallKit.setOnLockScreenVisibility(isVisible: false);
     }
@@ -57,7 +56,8 @@ class CallKitManager {
   }
 
   void muteCall(String sessionId, bool mute) {
-    ConnectycubeFlutterCallKit.reportCallMuted(sessionId: sessionId, muted: mute);
+    ConnectycubeFlutterCallKit.reportCallMuted(
+        sessionId: sessionId, muted: mute);
   }
 
   Future<void> _onCallAccepted(CallEvent callEvent) async {

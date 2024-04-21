@@ -50,7 +50,7 @@ Future<bool> hasBackgroundExecutionPermissions() async {
 Future<void> checkSystemAlertWindowPermission(BuildContext context) async {
   if (Platform.isAndroid) {
     var androidInfo = await DeviceInfoPlugin().androidInfo;
-    var sdkInt = androidInfo.version.sdkInt!;
+    var sdkInt = androidInfo.version.sdkInt;
 
     if (sdkInt >= 31) {
       if (await Permission.systemAlertWindow.isDenied) {

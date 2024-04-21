@@ -1,11 +1,10 @@
+import 'package:connectycube_sdk/connectycube_sdk.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:p2p_call_sample/src/utils/configs.dart';
 import 'package:universal_io/io.dart';
 import 'package:web_browser_detect/web_browser_detect.dart';
-
-import 'package:connectycube_sdk/connectycube_sdk.dart';
 
 import 'login_screen.dart';
 import 'managers/call_manager.dart';
@@ -1042,7 +1041,6 @@ class _ConversationCallScreenState extends State<ConversationCallScreen>
   void onDisconnectedFromUser(P2PSession session, int userId) {
     log("onDisconnectedFromUser userId= $userId");
   }
-
 
   @override
   void onConnectingToUser(P2PSession session, int userId) {
